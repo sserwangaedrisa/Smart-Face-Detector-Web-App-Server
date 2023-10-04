@@ -39,7 +39,7 @@ const RegisterHandler = (req, res, db, bcrypt) => {
         .then(trx.commit)
         .catch((error) => {
           trx.rollback();
-          res.status(500).json('An error occurred while adding the user');
+          res.json('An error occurred while adding the user');
         });
     });
   }
